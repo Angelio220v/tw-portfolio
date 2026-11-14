@@ -18,9 +18,11 @@ const config = {
     v4: true,
   },
 
-  // Production URL. Update after the Netlify site name is final.
   url: 'https://serveflow-docs.netlify.app',
   baseUrl: '/',
+  // Generate `page.html` instead of `page/index.html`, so Netlify serves
+  // `/docs/intro` directly without a redirect to `/docs/intro/`.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   markdown: {
