@@ -1,0 +1,23 @@
+# Private notes
+notes/
+
+# Vale: downloaded packages (restore with `vale sync`); keep own config and styles
+.vale/styles/*
+!.vale/styles/config/
+
+# Node / Docusaurus
+node_modules/
+build/
+.docusaurus/
+.cache-loader/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.env
+.env.*

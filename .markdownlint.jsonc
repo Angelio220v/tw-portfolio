@@ -1,0 +1,16 @@
+// markdownlint rules: https://github.com/DavidAnson/markdownlint#rules--aliases
+{
+  "default": true,
+
+  // Docusaurus pages have a `title` in front matter and an H1 in the body.
+  "MD025": { "front_matter_title": "" },
+
+  // Lines are wrapped for readable diffs, but long table rows and links are fine.
+  "MD013": false,
+
+  // Table pipe spacing: compact `|---|---|` delimiter rows are allowed.
+  "MD060": false,
+
+  // Docusaurus admonitions and MDX components use inline HTML/JSX.
+  "MD033": false
+}

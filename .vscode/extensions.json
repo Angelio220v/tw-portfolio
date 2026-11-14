@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "chrischinchilla.vale-vscode",
+    "davidanson.vscode-markdownlint",
+    "streetsidesoftware.code-spell-checker",
+    "unifiedjs.vscode-mdx",
+    "bierner.markdown-mermaid",
+    "yzhang.markdown-all-in-one",
+    "hediet.vscode-drawio",
+    "stoplight.spectral",
+    "asyncapi.asyncapi-preview",
+    "redocly.openapi-vs-code",
+    "ms-python.python",
+    "charliermarsh.ruff",
+    "github.vscode-github-actions",
+    "editorconfig.editorconfig"
+  ]
+}

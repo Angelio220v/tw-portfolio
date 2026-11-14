@@ -1,0 +1,62 @@
+# Builds the documentation site and deploys it to Netlify.
+# - Push to main: production deploy.
+# - Pull request: preview deploy; the preview URL appears in the job summary.
+name: Documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# One deploy per branch at a time; a newer run cancels an older one.
+concurrency:
+  group: docs-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: documentation
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: documentation/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the site
+        run: npm run build
+
+      - name: Deploy to Netlify (production)
+        if: github.event_name != 'pull_request'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npx --yes netlify-cli@27 deploy --dir=build --prod --no-build \
+            --message "Production: ${GITHUB_SHA::7}" --json > deploy.json
+          echo "Production URL: $(jq -r .url deploy.json)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Deploy to Netlify (preview)
+        if: github.event_name == 'pull_request'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npx --yes netlify-cli@27 deploy --dir=build --no-build \
+            --alias "pr-${{ github.event.number }}" \
+            --message "PR #${{ github.event.number }}" --json > deploy.json
+          echo "Preview URL: $(jq -r .deploy_url deploy.json)" >> "$GITHUB_STEP_SUMMARY"
