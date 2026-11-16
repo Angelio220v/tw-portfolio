@@ -5,7 +5,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
 const repoUrl = 'https://github.com/Angelio220v/tw-portfolio';
-const editUrl = `${repoUrl}/tree/main/documentation/`;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -49,7 +48,6 @@ const config = {
           path: 'external',
           routeBasePath: 'docs',
           sidebarPath: './sidebars.js',
-          editUrl,
         },
         blog: false,
         theme: {
@@ -68,7 +66,6 @@ const config = {
         path: 'internal',
         routeBasePath: 'internal',
         sidebarPath: './sidebars.js',
-        editUrl,
       },
     ],
     // Project documentation: business analysis and architecture artifacts.
@@ -79,7 +76,6 @@ const config = {
         path: 'project',
         routeBasePath: 'project',
         sidebarPath: './sidebars.js',
-        editUrl,
       },
     ],
   ],
