@@ -47,3 +47,10 @@ npm start
 ```
 
 The site opens at `http://localhost:3000`.
+
+`npm install` also installs [Vale](https://vale.sh) and downloads its
+style rules. To check the writing style of all pages, run:
+
+```bash
+npm run lint:prose
+```

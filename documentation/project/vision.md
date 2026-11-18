@@ -61,7 +61,7 @@ to the account type.
 | Guest | QR menu, ordering website | Browse the menu, place and pay for an order |
 | Waiter | Waiter app (phone or tablet) | Take orders at the table, send them to the kitchen, take payment on a payment terminal |
 | Cook | Kitchen display | See orders by kitchen station, mark dishes as ready |
-| Location manager | Management console (web) | Manage the stop list, staff shifts, and local prices |
+| Location manager | Management console (web) | Manage the stop list, staff, and local prices |
 | Regional manager, owner | Management console (web) | Manage the company menu, locations, and reports |
 | Customer IT team, integrator | Developer portal, API | Connect ServeFlow to the warehouse, website, and other systems |
 | ServeFlow support and operations | Back office (internal) | Onboard customers, monitor integrations, resolve incidents |

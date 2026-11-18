@@ -51,7 +51,7 @@ jobs:
           echo "Production URL: $(jq -r .url deploy.json)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Deploy to Netlify (preview)
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'dependabot[bot]'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

@@ -1,0 +1,11 @@
+extends: substitution
+message: "Use '%s' instead of '%s'."
+link: https://serveflow-docs.netlify.app/project/style-guide
+level: warning
+ignorecase: true
+swap:
+  log in: sign in
+  log into: sign in to
+  login: sign in
+  log out: sign out
+  logout: sign out

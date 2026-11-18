@@ -11,7 +11,9 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "postinstall": "vale --config=../.vale.ini sync",
+    "lint:prose": "vale --config=../.vale.ini external internal project README.md ../README.md ../product/README.md"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
@@ -26,7 +28,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
-    "@docusaurus/types": "3.10.2"
+    "@docusaurus/types": "3.10.2",
+    "@vvago/vale": "3.25.1"
   },
   "browserslist": {
     "production": [
@@ -42,5 +45,8 @@
   },
   "engines": {
     "node": ">=20.0"
+  },
+  "allowScripts": {
+    "@vvago/vale@3.25.1": true
   }
 }

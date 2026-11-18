@@ -1,9 +1,9 @@
 # Private notes
 notes/
 
-# Vale: downloaded packages (restore with `vale sync`); keep own config and styles
-.vale/styles/*
-!.vale/styles/config/
+# Vale: downloaded packages (restore with `vale sync`).
+# Own styles and vocabularies in .vale/styles/ are tracked.
+.vale/styles/Microsoft/
 
 # Node / Docusaurus
 node_modules/

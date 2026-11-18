@@ -1,0 +1,18 @@
+# Dependabot: https://docs.github.com/code-security/dependabot
+version: 2
+updates:
+  # Documentation site dependencies
+  - package-ecosystem: npm
+    directory: /documentation
+    schedule:
+      interval: weekly
+    groups:
+      # Docusaurus packages must have the same version: update them together.
+      docusaurus:
+        patterns: ["@docusaurus/*"]
+
+  # Versions of actions in .github/workflows
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

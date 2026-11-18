@@ -1,9 +1,8 @@
 Docusaurus
 OpenAPI
 AsyncAPI
-webhook
-webhooks
 ServeFlow
 ERP
 POS
 REST
+[Ww]ebhooks?
